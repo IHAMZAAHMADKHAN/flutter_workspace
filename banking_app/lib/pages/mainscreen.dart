@@ -1,4 +1,5 @@
 import 'package:banking_app/pages/sign_in_page.dart';
+import 'package:banking_app/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -93,7 +94,13 @@ class _MainscreenState extends State<Mainscreen> {
                               borderRadius: BorderRadius.circular(15.r),
                             ),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const SignUpPage()));
+                              },
                               child: const Text('Sign up'),
                             ),
                           )
