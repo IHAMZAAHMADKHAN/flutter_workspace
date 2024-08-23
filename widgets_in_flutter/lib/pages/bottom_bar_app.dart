@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_in_flutter/pages/table_influtter.dart';
 
 class BottomBarApp extends StatefulWidget {
   const BottomBarApp({super.key});
@@ -24,6 +25,17 @@ class _BottomBarAppState extends State<BottomBarApp> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.person), label: ('Profile')),
           ]),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TableInflutter(),
+                  ));
+            },
+            child: const Text('Next')),
+      ),
     );
   }
 }
