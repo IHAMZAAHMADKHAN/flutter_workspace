@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "622854657867",
+    "project_id": "flutter-firebase-7701c",
+    "storage_bucket": "flutter-firebase-7701c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622854657867:android:c803fd62bf904493dcface",
+        "android_client_info": {
+          "package_name": "com.example.flutter_with_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB86RLFwHc58x9vfCPDtGy0-uAO_VKGM-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622854657867:android:3d224776e95d01b4dcface",
+        "android_client_info": {
+          "package_name": "com.hamza.bankingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB86RLFwHc58x9vfCPDtGy0-uAO_VKGM-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

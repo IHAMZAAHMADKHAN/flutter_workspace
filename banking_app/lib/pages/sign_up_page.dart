@@ -14,9 +14,8 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Column(
             children: [
               Container(
@@ -208,8 +207,8 @@ class _SignUpPageState extends State<SignUpPage> {
                                             255, 47, 179, 7),
                                       ))),
                             ),
-                            const SizedBox(
-                              width: 20,
+                            SizedBox(
+                              width: 20.w,
                             ),
                             SizedBox(
                               height: 50.h,
@@ -235,7 +234,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               SizedBox(
-                height: 210.h,
+                height: 180.h,
               ),
               Center(
                 child: SizedBox(

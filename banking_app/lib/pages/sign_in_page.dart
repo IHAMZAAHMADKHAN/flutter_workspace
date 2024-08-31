@@ -55,10 +55,11 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 SizedBox(
                   width: 370.w,
-                  height: 38.h,
+                  height: 60.h,
                   child: const TextField(
                     autofillHints: [AutofillHints.email],
                     decoration: InputDecoration(
+                      hintText: 'Enter Your Email',
                       border: OutlineInputBorder(),
                     ),
                   ),
@@ -92,10 +93,10 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 SizedBox(
                   width: 370.w,
-                  height: 18.h,
+                  height: 58.h,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Checkbox(
                         value: true,
@@ -108,7 +109,7 @@ class _SignInPageState extends State<SignInPage> {
                             fontWeight: FontWeight.bold,
                             color: Colors.green,
                           )),
-                      SizedBox(width: 60.w),
+                      const Spacer(),
                       InkWell(
                         onTap: () {
                           Navigator.push(
