@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spotify_app/pages/common_design.dart';
+import 'package:spotify_app/pages/login_page.dart';
 import 'package:spotify_app/ui_helper/util.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -66,7 +67,7 @@ class _SighUpState extends State<SighUp> {
                     borderRadius: BorderRadius.all(Radius.circular(80.r)),
                   ),
                 ),
-                side: MaterialStateProperty.all<BorderSide>(
+                side: WidgetStateProperty.all<BorderSide>(
                   const BorderSide(
                     color: Color.fromARGB(255, 255, 255, 255), // Border color
                     width: 2.0, // Border thickness
@@ -119,7 +120,7 @@ class _SighUpState extends State<SighUp> {
                     borderRadius: BorderRadius.all(Radius.circular(80.r)),
                   ),
                 ),
-                side: MaterialStateProperty.all<BorderSide>(
+                side: WidgetStateProperty.all<BorderSide>(
                   const BorderSide(
                     color: Color.fromARGB(255, 255, 255, 255), // Border color
                     width: 2.0, // Border thickness
@@ -130,11 +131,13 @@ class _SighUpState extends State<SighUp> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const FaIcon(
-                    FontAwesomeIcons.google,
-                    color: Colors.blue,
-
-                    size: 24.0, // Adjust icon size if needed
+                  SizedBox(
+                    width: 29.w,
+                    height: 28.h,
+                    child: const Image(
+                      image: AssetImage('assets/images/Googlelogo.png'),
+                      // Adjust icon size if needed
+                    ),
                   ),
                   SizedBox(
                     width: 246.w,
@@ -173,7 +176,7 @@ class _SighUpState extends State<SighUp> {
                     borderRadius: BorderRadius.all(Radius.circular(80.r)),
                   ),
                 ),
-                side: MaterialStateProperty.all<BorderSide>(
+                side: WidgetStateProperty.all<BorderSide>(
                   const BorderSide(
                     color: Color.fromARGB(255, 255, 255, 255), // Border color
                     width: 2.0, // Border thickness
@@ -184,7 +187,7 @@ class _SighUpState extends State<SighUp> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  FaIcon(
+                  const FaIcon(
                     FontAwesomeIcons.facebook,
                     color: Colors.blue,
 
@@ -205,6 +208,24 @@ class _SighUpState extends State<SighUp> {
               ),
             ),
           ),
+          SizedBox(
+            height: 12.h,
+          ),
+          Center(
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                    ));
+              },
+              child: Text(
+                'Log In',
+                style: mtextstyle1(),
+              ),
+            ),
+          )
         ],
       ),
     );
