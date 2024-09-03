@@ -41,3 +41,13 @@ TextStyle mtextstyleh3({
     fontSize: fontSize,
   );
 }
+
+TextStyle mtextstyleh4({
+  color = Colors.black,
+  double fontSize = 12,
+}) {
+  return GoogleFonts.poppins(
+    fontWeight: FontWeight.bold,
+    fontSize: fontSize,
+  );
+}
