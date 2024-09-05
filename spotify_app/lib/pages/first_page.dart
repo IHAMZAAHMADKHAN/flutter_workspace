@@ -10,20 +10,26 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> {
   @override
+  void initState() {
+    super.initState();
+
+    // Simulate a loading period of 3 seconds
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        // ignore: use_build_context_synchronously
+        context,
+        MaterialPageRoute(builder: (context) => const GetStart()),
+      );
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: InkWell(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const GetStart(),
-                ));
-          },
-          child: const Image(
-              image: AssetImage('assets/images/Spotify_Logo_RGB_Green.png')),
+        child: Image(
+          image: AssetImage('assets/images/Spotify_Logo_RGB_Green.png'),
         ),
       ),
     );

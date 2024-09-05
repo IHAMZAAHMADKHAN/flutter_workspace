@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spotify_app/pages/common_design.dart';
 import 'package:spotify_app/pages/login_page.dart';
+import 'package:spotify_app/pages/registeration_page.dart';
 import 'package:spotify_app/ui_helper/util.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -27,7 +28,7 @@ class _SighUpState extends State<SighUp> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SighUp(),
+                    builder: (context) => const RegisterationPage(),
                   ),
                 );
               },

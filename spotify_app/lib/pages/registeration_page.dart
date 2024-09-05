@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:spotify_app/pages/continue_page.dart';
 import 'package:spotify_app/pages/login_page.dart';
 import 'package:spotify_app/ui_helper/util.dart';
 
@@ -96,8 +95,8 @@ class _RegisterationPageState extends State<RegisterationPage> {
               child: TextFormField(
                 obscureText: true,
                 style: TextStyle(
-                  color: Colors.white, // Change this to your desired text color
-                  fontSize: 16.sp, // Optional: Change the font size
+                  color: Colors.white,
+                  fontSize: 16.sp,
                 ),
                 decoration: InputDecoration(
                   suffixIcon: const Icon(Icons.visibility_off_outlined),
@@ -114,8 +113,8 @@ class _RegisterationPageState extends State<RegisterationPage> {
               height: 72.h,
               child: TextFormField(
                 style: TextStyle(
-                  color: Colors.white, // Change this to your desired text color
-                  fontSize: 16.sp, // Optional: Change the font size
+                  color: Colors.white,
+                  fontSize: 16.sp,
                 ),
                 obscureText: true,
                 decoration: InputDecoration(
@@ -136,9 +135,7 @@ class _RegisterationPageState extends State<RegisterationPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ContinuePage(
-                              toggleTheme: () {},
-                            ),
+                            builder: (context) => const LoginPage(),
                           ));
                     },
                     style: ButtonStyle(

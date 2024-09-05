@@ -2,11 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// ignore: unused_import
-import 'package:spotify_app/pages/common_design.dart';
-import 'package:spotify_app/pages/continue_page.dart';
+
+import 'package:spotify_app/pages/home_page.dart';
 import 'package:spotify_app/pages/registeration_page.dart';
-import 'package:spotify_app/pages/sigh_up.dart';
 import 'package:spotify_app/ui_helper/util.dart';
 
 class LoginPage extends StatefulWidget {
@@ -51,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const SighUp()));
+                                builder: (context) => HomePage()));
                       },
                     text: " Click Here",
                     style: mtextstyle16()
@@ -144,9 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ContinuePage(
-                                toggleTheme: () {},
-                              ),
+                              builder: (context) => HomePage(),
                             ));
                       },
                       style: ButtonStyle(

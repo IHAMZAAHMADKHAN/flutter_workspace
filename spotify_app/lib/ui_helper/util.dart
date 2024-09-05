@@ -32,3 +32,27 @@ TextStyle mtextstyle12() {
       color: Colors.white,
       height: 1.5);
 }
+
+TextStyle mtextstyle14() {
+  return GoogleFonts.montserrat(
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+      height: 1.5);
+}
+
+TextStyle mtextstyle20() {
+  return GoogleFonts.montserrat(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+      height: 1.5);
+}
+
+TextStyle mtextstyle18() {
+  return GoogleFonts.montserrat(
+      fontSize: 18,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+      height: 1.5);
+}
