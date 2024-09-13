@@ -272,20 +272,21 @@ class _HomePageState extends State<HomePage> {
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.vertical,
-                child: Container(
+                child: SizedBox(
                     width: 363.w,
                     height: 264.h,
                     child: ListView.builder(
                       itemCount: 3,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          trailing: Icon(
+                          trailing: const Icon(
                             Icons.navigate_next_outlined,
                             color: Colors.white,
                           ),
                           leading: CircleAvatar(
                             radius: 40.r,
-                            backgroundImage: AssetImage('assets/images/a1.png'),
+                            backgroundImage:
+                                const AssetImage('assets/images/a1.png'),
                           ),
                           title: Text(
                             'Adele',
