@@ -2,6 +2,7 @@
   "project_info": {
     "project_number": "622854657867",
     "project_id": "flutter-firebase-7701c",
+    "databaseURL": "https://flutter-firebase-7701c-default-rtdb.firebaseio.com/",
     "storage_bucket": "flutter-firebase-7701c.appspot.com"
   },
   "client": [

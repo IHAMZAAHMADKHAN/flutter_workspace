@@ -2,6 +2,8 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:login_signup_with_firebase/pages/add_blog.dart';
+import 'package:login_signup_with_firebase/pages/add_post.dart';
 import 'package:login_signup_with_firebase/pages/mybtn.dart';
 import 'package:login_signup_with_firebase/pages/signup_page.dart';
 
@@ -63,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SignupPage(),
+                        builder: (context) => AddPost(),
                       ));
                 }).catchError((onError) {
                   ScaffoldMessenger.of(context).showSnackBar(
