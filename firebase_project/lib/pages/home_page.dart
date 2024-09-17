@@ -1,4 +1,3 @@
-import 'package:firebase_project/pages/add_post.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,13 +18,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AddPost(),
-                  ));
-            },
+            onPressed: () {},
           ),
           const SizedBox(
             width: 20,
