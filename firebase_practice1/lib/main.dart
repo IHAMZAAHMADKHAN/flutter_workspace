@@ -4,8 +4,18 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding
+      .ensureInitialized(); // Ensures that all services are initialized before running the app
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyANifv2rhHIbkrpSjEmEjND2TPfQWbCSGo",
+      appId: "1:336322308828:android:5caffb1d1b2aaa93b26219",
+      messagingSenderId: "336322308828",
+      projectId: "fir-practice1-6c4bc",
+      storageBucket: "fir-practice1-6c4bc.appspot.com",
+      databaseURL:
+          "https://fir-practice1-6c4bc-default-rtdb.firebaseio.com/", // Your Firebase Database URL
+    ),
   );
   runApp(const MyApp());
 }

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_practice1/mybutton.dart';
 import 'package:firebase_practice1/pages/forgot_pass.dart';
+import 'package:firebase_practice1/pages/post_sreen.dart';
 import 'package:firebase_practice1/pages/signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -77,6 +78,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ..then((onValue) {
                   ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text("Log in Succesfully")));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PostSreen(),
+                      ));
                 }).catchError((onError) {
                   ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text(onError.toString())));
