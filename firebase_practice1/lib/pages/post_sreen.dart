@@ -1,3 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:firebase_practice1/pages/add_post.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +12,8 @@ class PostSreen extends StatefulWidget {
 }
 
 class _PostSreenState extends State<PostSreen> {
+  final auth = FirebaseAuth.instance;
+  DatabaseReference dref = FirebaseDatabase.instance.ref("Post");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +33,31 @@ class _PostSreenState extends State<PostSreen> {
             icon: Icon(Icons.add),
           ),
         ],
+      ),
+      body: FirebaseAnimatedList(
+        query: dref,
+        itemBuilder: (context, snapshot, animation, index) {
+          return ListTile(
+            title: Text(snapshot.child('title').value.toString()),
+            trailing: PopupMenuButton(
+              icon: Icon(Icons.more_horiz),
+              itemBuilder: (context) => [
+                PopupMenuItem(
+                  child: ListTile(
+                    leading: Icon(Icons.edit),
+                    title: Text('Edit'),
+                  ),
+                ),
+                PopupMenuItem(
+                  child: ListTile(
+                    leading: Icon(Icons.delete_forever_outlined),
+                    title: Text('Delete'),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

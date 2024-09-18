@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_practice1/mybutton.dart';
@@ -36,7 +38,7 @@ class _AddPostState extends State<AddPost> {
                     hintText: "Add post", border: OutlineInputBorder()),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Mybutton(
