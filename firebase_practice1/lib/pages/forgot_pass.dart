@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_practice1/mybutton.dart';
 import 'package:firebase_practice1/utils.dart';

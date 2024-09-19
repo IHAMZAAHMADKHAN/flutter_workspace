@@ -18,7 +18,7 @@ class _MybuttonState extends State<Mybutton> {
         width: 250,
         child: ElevatedButton(
             style: ButtonStyle(
-              backgroundColor: WidgetStateProperty.all(Colors.yellow),
+              backgroundColor: WidgetStateProperty.all(Colors.amber),
             ),
             onPressed: widget.onButtonpress,
             child: Text(widget.title)));

@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_single_cascade_in_expression_statements
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_practice1/mybutton.dart';
 import 'package:firebase_practice1/pages/forgot_pass.dart';
@@ -20,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Login Page'),
+          title: const Text('Login Page'),
           centerTitle: true,
           backgroundColor: Colors.amber,
         ),
@@ -66,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     "Forgot Password?",
                     style: TextStyle(fontSize: 15),
                   ))),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           Mybutton(
@@ -81,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PostSreen(),
+                        builder: (context) => const PostSreen(),
                       ));
                 }).catchError((onError) {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -89,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 });
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           TextButton(
@@ -97,10 +99,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignupScreen(),
+                      builder: (context) => const SignupScreen(),
                     ));
               },
-              child: Text('Dont Have acount'))
+              child: const Text('Dont Have acount'))
         ]));
   }
 }

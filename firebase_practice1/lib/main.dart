@@ -1,7 +1,6 @@
 import 'package:firebase_practice1/pages/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: SignupScreen(),
+      home: const SignupScreen(),
     );
   }
 }

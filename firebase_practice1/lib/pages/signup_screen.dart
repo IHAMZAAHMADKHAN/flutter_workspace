@@ -62,6 +62,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   .then((onValue) {
                 Utils().toastMessage("Register Successfully", context);
               }).catchError((onError) {
+                // ignore: avoid_print
                 print(onError.toString());
               });
             },
