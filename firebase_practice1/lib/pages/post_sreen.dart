@@ -16,6 +16,7 @@ class PostSreen extends StatefulWidget {
 class _PostSreenState extends State<PostSreen> {
   final auth = FirebaseAuth.instance;
   DatabaseReference dref = FirebaseDatabase.instance.ref("Post");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +40,12 @@ class _PostSreenState extends State<PostSreen> {
       body: FirebaseAnimatedList(
         query: dref,
         itemBuilder: (context, snapshot, animation, index) {
+          // Extract the title and id from the snapshot
+          String title = snapshot.child('title').value.toString();
+          String id = snapshot.child('id').value.toString();
+
           return ListTile(
-            title: Text(snapshot.child('title').value.toString()),
+            title: Text(title),
             trailing: PopupMenuButton(
               icon: Icon(Icons.more_horiz),
               itemBuilder: (context) => [
@@ -48,6 +53,10 @@ class _PostSreenState extends State<PostSreen> {
                   child: ListTile(
                     leading: Icon(Icons.edit),
                     title: Text('Edit'),
+                    onTap: () {
+                      Navigator.pop(context);
+                      myDialog(title, snapshot.child("id").value.toString());
+                    },
                   ),
                 ),
                 PopupMenuItem(
@@ -61,6 +70,39 @@ class _PostSreenState extends State<PostSreen> {
           );
         },
       ),
+    );
+  }
+
+  Future<void> myDialog(String title, String id) async {
+    final editcontroller = TextEditingController();
+    editcontroller.text = title;
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Update'),
+          content: TextField(
+            controller: editcontroller,
+            maxLines: 3,
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                dref.child(id).update({'title': editcontroller.text});
+                Navigator.pop(context);
+              },
+              child: Text('Okay'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Cancel'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
