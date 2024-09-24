@@ -40,9 +40,9 @@ class _PostSreenState extends State<PostSreen> {
       body: FirebaseAnimatedList(
         query: dref,
         itemBuilder: (context, snapshot, animation, index) {
-          // Extract the title and id from the snapshot
           String title = snapshot.child('title').value.toString();
-          String id = snapshot.child('id').value.toString();
+          String id = snapshot.child("id").value.toString();
+          snapshot.child('id').value.toString();
 
           return ListTile(
             title: Text(title),
@@ -63,6 +63,10 @@ class _PostSreenState extends State<PostSreen> {
                   child: ListTile(
                     leading: Icon(Icons.delete_forever_outlined),
                     title: Text('Delete'),
+                    onTap: () {
+                      dref.child(id).remove();
+                      Navigator.pop(context);
+                    },
                   ),
                 ),
               ],
@@ -96,6 +100,9 @@ class _PostSreenState extends State<PostSreen> {
             ),
             TextButton(
               onPressed: () {
+                if (id.isNotEmpty) {
+                  dref.child(id).update({'title': editcontroller.text});
+                }
                 Navigator.pop(context);
               },
               child: Text('Cancel'),

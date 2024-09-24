@@ -17,6 +17,7 @@ class _AddPostState extends State<AddPost> {
   final auth = FirebaseAuth.instance;
   final ref = FirebaseDatabase.instance.ref("Post");
   final postcontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +48,7 @@ class _AddPostState extends State<AddPost> {
                 String id = DateTime.now().microsecondsSinceEpoch.toString();
                 ref.child(id).set({
                   "title": postcontroller.text,
-                  "Id": id,
+                  "id": id,
                 }).then((onValue) {
                   Utils().toastMessage("Post Added", context);
                 }).catchError((onError) {
