@@ -1,28 +1,26 @@
-import 'package:firebase_practice2/pages/home_sreen.dart';
 import 'package:firebase_practice2/pages/mybtn.dart';
-import 'package:firebase_practice2/pages/sign_up_sreen.dart';
+import 'package:firebase_practice2/pages/sign_in_sreen.dart';
 import 'package:firebase_practice2/pages/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class SignInSreen extends StatefulWidget {
-  const SignInSreen({super.key});
+class SignUpSreen extends StatefulWidget {
+  const SignUpSreen({super.key});
 
   @override
-  State<SignInSreen> createState() => _SignInSreenState();
+  State<SignUpSreen> createState() => _SignUpSreenState();
 }
 
-class _SignInSreenState extends State<SignInSreen> {
+class _SignUpSreenState extends State<SignUpSreen> {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final auth = FirebaseAuth.instance;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Sign In Sreen"),
+        title: const Text("Sign up Sreen"),
         centerTitle: true,
         backgroundColor: Colors.amber,
       ),
@@ -39,7 +37,7 @@ class _SignInSreenState extends State<SignInSreen> {
                     height: 50,
                   ),
                   Text(
-                    'Login into account',
+                    'Create your account',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
@@ -71,21 +69,17 @@ class _SignInSreenState extends State<SignInSreen> {
                   Mybtn(
                       onButtonpress: () {
                         auth
-                            .signInWithEmailAndPassword(
+                            .createUserWithEmailAndPassword(
                                 email: emailController.text.toString(),
                                 password: passwordController.text.toString())
                             .then((onValue) {
-                          Utils().toastMessage('Login Successfully', context);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomeSreen(),
-                              ));
+                          Utils().toastMessage(
+                              "Account Created Seccesfully", context);
                         }).catchError((onError) {
                           print(onError.toString());
                         });
                       },
-                      title: 'SignIn'),
+                      title: 'SignUp'),
                   const SizedBox(
                     height: 100,
                   ),
@@ -94,10 +88,10 @@ class _SignInSreenState extends State<SignInSreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const SignUpSreen(),
+                              builder: (context) => const SignInSreen(),
                             ));
                       },
-                      child: const Text('Dont Have Account'))
+                      child: const Text('Already Have Account'))
                 ],
               ),
             )),

@@ -1,5 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:firebase_practice2/pages/add_blog_sreen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeSreen extends StatefulWidget {
